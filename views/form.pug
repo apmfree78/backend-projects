@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h2 URL Shortner Service
+    form.form(action="/api/shorturl" method="POST")
+      label(for="url") Enter URL:
+      input(type="text" name="url")
+      input.button(type="submit" value="Submit")
