@@ -13,6 +13,12 @@ exports.setURL = async (req, res) => {
   const url = req.body.url;
   console.log(`url:  ${url}`);
 
+  //addtional validation check
+  httpCheck = /^https?:\/\//;
+  if (!httpCheck.test(url)) {
+    return res.json({ error: 'invalid url' });
+  }
+
   //checking to see if url is ready in databse
   const urlCode = await UrlCode.findOne({ url });
   if (!urlCode) {
