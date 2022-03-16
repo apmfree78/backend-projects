@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/api/shorturl', controller.loadForm);
+// command line: curl -d 'url=https://yahoo.com' -X POST https://backend-projects1978.herokuapp.com/api/shorturl; echo;
 router.post(
   '/api/shorturl',
   userValidationRules(),
